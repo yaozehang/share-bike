@@ -25,7 +25,6 @@ export default class index extends Component {
     axios.get(`http://t.weather.sojson.com/api/weather/city/101010100`)
       .then(res => {
         let weather = res.data.data.forecast[0]
-        console.log(res.data.data.forecast[0]);
         let weatherStr = `${weather.low}~${weather.high}   ${weather.fx}  ${weather.fl}`
         this.setState({
           weather:weatherStr

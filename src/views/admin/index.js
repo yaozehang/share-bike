@@ -17,7 +17,7 @@ export default class index extends Component {
           <Col span={4}>
             <NavLeft></NavLeft>
           </Col>
-          <Col span={20}>
+          <Col span={20} style={{height: '100vh',overflow: 'auto'}}>
             <Header></Header>
             <div className='content-wrap'>
               <div className="content">
