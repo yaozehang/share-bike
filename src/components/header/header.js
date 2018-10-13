@@ -7,7 +7,7 @@ export default class header extends Component {
     return (
       <div className='header-demo-wrap'>
         <div className="header-left fll">
-          <h1>共享单车后台管理系统</h1>
+          <Link to='/admin/home'>共享单车后台管理系统</Link>
         </div>
         <div className="header-right flr">
           <span className='username'>

@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import './index.less'
 import {formatDate} from '../../utils'
-import axios from 'axios'
+import axios from '../../axios'
+import { connect } from 'react-redux';
 
-export default class index extends Component {
+class index extends Component {
 
   state = {
     time :'2018-08-01 23:30:56',
@@ -24,7 +25,7 @@ export default class index extends Component {
   getWeather = () => {
     axios.get(`http://t.weather.sojson.com/api/weather/city/101010100`)
       .then(res => {
-        let weather = res.data.data.forecast[0]
+        let weather = res.data.forecast[0]
         let weatherStr = `${weather.low}~${weather.high}   ${weather.fx}  ${weather.fl}`
         this.setState({
           weather:weatherStr
@@ -50,7 +51,7 @@ export default class index extends Component {
         </div>
         <div className="weather-wrap clearfix">
           <div className="breadcrumb fll">
-            首页
+            {this.props.menuText}
           </div>
           <div className="weather flr clearfix">
             <div className="date fll">
@@ -65,3 +66,13 @@ export default class index extends Component {
     )
   }
 }
+
+//connect 接受两个参数,一个参数叫做mapStateToProps,另一个参数叫mapActionToProps,
+//这两个参数都应该是一个函数
+export default connect(
+  (state) => {
+    return {
+      menuText:state.menuItemText
+    }
+  }
+)(index)
