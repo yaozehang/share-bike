@@ -10,8 +10,8 @@ const RangePicker = DatePicker.RangePicker;
 class index extends Component {
   state = {
     dataSource: [],
-    pageSize:'',
-    total:'',
+    pageSize:0,
+    total:10,
     isloading:false,
     endItem:{},
     visible:false,
@@ -47,7 +47,7 @@ class index extends Component {
             item.key = index
             return item
           }),
-          pageSize:10,
+          pageSize:res.result.page_size,
           total: res.result.total_count,
           isloading:false
         })

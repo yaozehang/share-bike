@@ -7,6 +7,7 @@ import Admin from '../views/admin'
 import Pie from '../views/pie'
 import Bar from '../views/bar'
 import OrderDetails from '../views/order/details'
+import User from '../views/user'
 
 export default class index extends Component {
 
@@ -24,6 +25,7 @@ export default class index extends Component {
                 <Route path='/admin/order' component={Order}></Route>
                 <Route path='/admin/pie' component={Pie}></Route>
                 <Route path='/admin/bar' component={Bar}></Route>
+                <Route path='/admin/user' component={User}></Route>
                 <Route  component={NotMatch}></Route>
               </Switch>    
             </Admin>

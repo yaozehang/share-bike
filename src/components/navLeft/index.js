@@ -34,6 +34,9 @@ class index extends Component {
                 <Link to='/admin/bar'>柱状图</Link>
             </MenuItem>
           </SubMenu>
+          <MenuItem key='/user'>
+                <Link to='/admin/user'>用户管理</Link>
+            </MenuItem>
         </Menu>
       </div>
     )
